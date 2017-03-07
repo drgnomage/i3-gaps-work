@@ -1,0 +1,74 @@
+own_window yes 
+own_window_type override
+own_window_colour 232c31
+own_window_argb_visual true
+own_window_argb_value 220
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_class conky
+own_window_title conky-i3
+out_to_console no
+use_xft yes
+update_interval .5
+cpu_avg_samples 2
+net_avg_samples 2
+double_buffer yes
+maximum_width 215
+minimum_size 80 1020
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+border_width 20
+default_color 000000
+default_shade_color 000000
+default_outline_color 000000
+alignment top_right
+gap_x 30
+gap_y 30
+use_spacer left
+no_buffers yes
+uppercase no
+background yes
+default_color ffffff
+draw_graph_borders no
+
+TEXT
+${font Roboto Mono for Powerline:size=14} ${offset 75} ${time %d/%m/%Y}
+${font Roboto Mono for Powerline:bold:size=50} ${offset -68} ${time %H:%M}${font Roboto Mono for Powerline:size=8}
+${font Roboto Mono for Powerline:size=22}
+${font Roboto Mono for Powerline:size=8} ${offset 16} RX ${downspeed enp2s0}
+${font Roboto Mono for Powerline:size=8} ${offset 16} TX ${upspeed enp2s0} 
+
+${font Roboto Mono for Powerline:size=8} ${alignr} CPU0 ${cpubar cpu1 7,155} 
+${font Roboto Mono for Powerline:size=8} ${alignr} CPU1 ${cpubar cpu2 7,155} 
+${font Roboto Mono for Powerline:size=8} ${alignr} CPU2 ${cpubar cpu3 7,155} 
+${font Roboto Mono for Powerline:size=8} ${alignr} CPU3 ${cpubar cpu4 7,155} ${offset 5}
+
+${font Roboto Mono for Powerline:size=8} ${alignr} RAM ${membar 7,155} 
+${font Roboto Mono for Powerline:size=8} ${alignr} SWAP ${swapbar 7,155} 
+
+${font Roboto Mono for Powerline:size=8} ${alignr} HOME ${fs_bar 7,155 /home} 
+${font Roboto Mono for Powerline:size=8} ${alignr} MNT ${fs_bar 7,155 /home/josh/mnt} 
+${font Roboto Mono for Powerline:size=8} ${alignr} ROOT ${fs_bar 7,155 /} 
+
+
+${font Roboto Mono for Powerline:size=9}${offset 30}${top_time time 1} ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_time name 1} 
+${font Roboto Mono for Powerline:size=9}${offset 30}${top_time time 2} ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_time name 2} 
+${font Roboto Mono for Powerline:size=9}${offset 30}${top_time time 3} ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_time name 3} 
+${font Roboto Mono for Powerline:size=9}${offset 30}${top_time time 4} ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_time name 4} 
+${font Roboto Mono for Powerline:size=9}${offset 30}${top_time time 5} ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_time name 5} 
+
+
+${font Roboto Mono for Powerline:size=9}${offset 45}${top_mem mem 1}% ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_mem name 1} 
+${font Roboto Mono for Powerline:size=9}${offset 45}${top_mem mem 2}% ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_mem name 2} 
+${font Roboto Mono for Powerline:size=9}${offset 45}${top_mem mem 3}% ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_mem name 3} 
+${font Roboto Mono for Powerline:size=9}${offset 45}${top_mem mem 4}% ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_mem name 4} 
+${font Roboto Mono for Powerline:size=9}${offset 45}${top_mem mem 5}% ${offset -10} ${font Roboto Mono for Powerline:size=9} ${top_mem name 5} 
+
+
+
+${alignr} ${diskiograph 75,195 ffffff DFAF8F 12000M} ${offset 5}
+${alignr} ${downspeedgraph enp2s0 75,195 ffffff 9AB8D7 15000M} ${offset 5}
+${alignr} ${upspeedgraph enp2s0 75,195 ffffff DCA3A3 7500M} ${offset 5}
+${alignr} ${cpugraph 75,195 ffffff DC8CC3 1} ${offset 5}
+${alignr} ${memgraph 75,195 ffffff 8CD0D3} ${offset 5}

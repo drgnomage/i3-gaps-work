@@ -1,0 +1,62 @@
+out_to_x no
+own_window no
+out_to_console yes
+double_buffer no
+background no
+update_interval 1.0
+total_run_times 0
+short_units yes
+if_up_strictness address
+use_spacer right
+override_utf8_locale no
+cpu_avg_samples 2
+
+## Sensors examples
+# Top Process: ${top name 1}
+# Root: {fs_used /}/${fs_size /} /home ${fs_free /home} /${fs_size /home}
+# Load: ${loadavg 1} ${loadavg 2} ${loadavg 3} 
+# Load: $loadavg
+# Swap: ${swap}/${swapmax} (${swapperc}%)
+# Processes: ${running_processes} / ${processes}
+# CPU: $cpu% 
+# HDD: $diskio_read :Read $diskio_write :Write
+# Temp: Core0: ${exec sensors | awk '/Core 0/ {print $3}'} Core1: ${exec sensors | awk '/Core 1/ {print $3}'}
+# Freq: ${freq cpu0}Mhz
+# Uptime: $uptime
+# Kernel:$kernel on $machine
+# Name: $nodename - $sysname
+# Battery: ${battery_percent BAT0}%
+
+## Stuff after 'TEXT' will be formatted on screen
+TEXT
+ CPU $cpu% ${exec sensors | grep '70' | awk '{ printf $2 }' | cut -c 2-10 } ${exec sensors | grep 'power1' | awk '{ printf $2 }' }W | \
+ HDD R:$diskio_read W:$diskio_write  | \
+ RAM ${memperc}%  | \
+ / ${fs_free /}  |\
+ /home ${fs_free /home}  |\
+ ${if_up enp6s0}eth0 ${addr enp6s0} D:${downspeed enp6s0} U:${upspeed enp6s0} |${endif}\
+ ${if_up wlp4s0}wlan0 ${addr wlp4s0} D:${downspeed wlp4s0} U:${upspeed wlp4s0} |${endif}\
+ ${if_up wlp0s19f2u5}wlan1 ${addr wlp0s19f2u5} D:${downspeed wlp0s19f2u5} U:${upspeed wlp0s19f2u5} |${endif}\
+ ${if_up ppp0}wlan1 ${addr ppp0} D:${downspeed ppp0} U:${upspeed ppp0} |${endif}\
+ ${uptime}  | \
+ ${time %a %d/%m/%y} ${time %H:%M}  \
+
+
+# GPU ${exec aticonfig --odgc | grep GPU | awk '{ printf $4 }' }% ${exec aticonfig --odgt | grep Temp | awk '{ printf $5 }' | cut -c 1-2 }°C Fan: ${exec aticonfig --pplib-cmd "get fanspeed 0" | grep Speed | awk '{print $4}'} | \
+
+
+# Weather temperature
+#${exec weather --headers="Temperature" -q | awk '/Temperature/ {print $2}'}C ${exec weather --headers="Sky conditions" -q | awk '/Sky conditions/ {print $3 " " $4}'} | \
+# Volume %
+#Vol: ${mixer}
+# Ethernet status
+#${if_up enp6s0}enp6s0 ${addr enp6s0} | ${endif} \
+# Wireless status
+#${if_up wlp4s0}wlp4s0 ${addr wlp4s0}|${endif} \
+# Wireless status
+#${if_up wlan1}wlan1 ${addr wlan1}|${endif} \
+#BATT ${battery BAT0} |\
+#CPU ${cpu cpu1}% ${freq_g 1}GHz ${exec sensors | grep -m 1 "Core 0"|awk '{print $3}'} ${exec sensors | grep -m 1 "Core 1"|awk '{print $3}'} ${exec sensors | grep -m 1 "Core 2"|awk '{print $3}'} ${exec sensors | grep -m 1 "Core 3"|awk '{print $3}'} | \
+#GPU Temp ${execi 60 nvidia-settings -query GPUCoreTemp| grep gpu | perl -ne 'print $1 if /GPUCoreTemp.*?: (\d+)./;'} °C | \
+#RAM ${memperc}% | \
+

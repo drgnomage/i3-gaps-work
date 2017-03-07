@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #echo "{\"version\":1}"
-echo "{ \"version\": 1, \"stop_signal\": 10, \"cont_signal\": 12, \"click_events\": true }"
-echo "[[]"
-conky -d
+#echo "{ \"version\": 1, \"stop_signal\": 10, \"cont_signal\": 12, \"click_events\": true }"
+#echo "[[]"
+conky -d -c /home/josh/.i3/conkyrc
 
 IFS="}"
 while read;do
@@ -15,11 +15,21 @@ while read;do
     \"updates\")
       yad --button gtk-apply:0 --text-info --geometry=200x200+$X+20 --class "YADWIN" --margins=10 --filename=<(pacman -Sup --print-format="%n %v" | grep -v "^::")
       if [[ $? -eq 0 ]];then
-        deepin-terminal -H --command "/home/josh/.i3/conkexec.sh sudo pacmatic -Syu" -T "Menu Update"
+        xfce4-terminal -H--command "/home/josh/.i3/conkexec.sh sudo pacmatic -Syu" -T "Menu Update"
       fi
       ;;
     \"date\")
       yad --no-buttons --geometry=+$X+20 --class "YADWIN" --calendar
+      ;;
+    \"temp\")
+      yad --no-buttons --text-info --geometry=500x260+$X+20 --class "YADWIN" --margins=10 --filename=<(acpi -V)
+      ;;
+    \"bright\")
+      LEVEL=`/home/josh/.i3/blevel.sh`
+      OUT=`yad --text="Brightness" --scale --value $LEVEL --button gtk-ok:0 --geometry=x200+$X+20 --class "YADWIN" --vertical --text-align center`
+      if [[ $? -eq 0 ]];then
+        Q=`/home/josh/.i3/conkexec.sh sudo light $OUT`
+      fi
       ;;
     \"volume\")
       VOL=`/home/josh/.i3/pacvol.sh display | sed "s/[^1-9]//" | sed "s/%//"`
