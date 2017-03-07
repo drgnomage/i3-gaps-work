@@ -1,2 +1,0 @@
-#!/bin/zsh
-i3lock -i <(import -display $DISPLAY -window root - | convert -paint 5x10 - png:-)
