@@ -385,3 +385,4 @@ exec --no-startup-id /usr/bin/redshift-gtk &
 exec --no-startup-id /usr/bin/indicator-kdeconnect &
 exec --no-startup-id /home/josh/scripts/wallpaper.sh &
 exec --no-startup-id /usr/bin/clipit &
+exec --no-startup-id /usr/bin/conky -c ~/.conkyrc.bak &

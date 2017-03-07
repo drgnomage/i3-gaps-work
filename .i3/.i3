@@ -1,1 +1,0 @@
-/home/josh/.i3

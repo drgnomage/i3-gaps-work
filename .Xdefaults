@@ -1,0 +1,52 @@
+#include ".Xresources"
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi*color-enabled: true
+
+!    color            bg       fg     bg al    hl bg    hl fg
+rofi*color-normal: #ee273238, #c1c1c1, #ee273238, #33ddff, #273238
+rofi*color-active: #ee273238, #ff33ff, #ee273238, #33ddff, #273238
+rofi*color-urgent: #ee273238, #33ddff, #ee273238, #33ddff, #273238
+
+!    color-window  background  border separator
+rofi*color-window: #ee273238, #33ddff, #ff33ff
+
+!rofi*modi:				run,window,ssh
+
+rofi*separator-style:	solid
+!rofi*fullscreen:		true
+rofi*lines:				5
+rofi*fuzzy:				true
+rofi*location:			0
+rofi*padding:			35
+rofi*hide-scrollbar:	true
+rofi*font:				Roboto Mono for Powerline Regular 14
+rofi*bw:				3
+rofi*width:				1400
+rofi*line-margin:		1
+rofi*switchers:         window,run,ssh
+rofi*opacity:           50
+rofi*columns:           1
+rofi*fake-transparency: false
+rofi*fake-background:   screenshot
+rofi*fullscreen:        false
+rofi*bc:                white
+rofi*yoffset:           -350
+rofi*xoffset:           0
+rofi*fixed-num-lines:   false
+rofi*hmode:             false
+rofi*terminal:          urxvt
+rofi*ssh-client:        ssh
+rofi*ssh-command:       {terminal} -e {ssh-client} {host}
+rofi*run-command:       {cmd}
+rofi*run-shell-command: {terminal} -e {cmd}
+rofi*disable-history:   false
+rofi*levenshtein-sort: true
+rofi*sidebar-mode: true
+
+URxvt*internalBorder:	5
+URxvt*scrollWithBuffer: true
+URxvt*secondaryWheel: 1
+URxvt*lineSpace:		2
