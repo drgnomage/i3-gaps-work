@@ -58,6 +58,7 @@ ${font Roboto Mono for Powerline:size=9}${offset 15}${top_mem mem 2}%${goto 95}$
 ${font Roboto Mono for Powerline:size=9}${offset 15}${top_mem mem 3}%${goto 95}${font Roboto Mono for Powerline:bold:size=9}${top_mem name 3} 
 
 
+
 ${color 16a085}
 ${offset 10}${diskiograph 80,195 ffffff DFAF8F 12000M} ${offset 5}
 ${offset 20}${font Roboto Mono for Powerline:bold:size=10}${voffset -30}Disk

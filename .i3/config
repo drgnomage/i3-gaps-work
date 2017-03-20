@@ -21,7 +21,7 @@ set $black       #282828
 set $darkblack   #1d2021
 set $background  #252525
 
-set $height 20
+set $height 30
 
 set $ws1   "1: I "
 set $ws2   "2: II "
@@ -79,11 +79,19 @@ floating_maximum_size -1 x -1
 font pango:Monospace, Awesome 10
 
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
-client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
-client.unfocused        $black      $black      $white      $darkblack  $darkblack
-client.focused_inactive $black      $black      $white      $darkblack  $darkblack
-client.urgent           $darkred    $darkred    $black      $darkred    $darkred
-client.background       $black
+#client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
+#client.unfocused        $black      $black      $white      $darkblack  $darkblack
+#client.focused_inactive $black      $black      $white      $darkblack  $darkblack
+#client.urgent           $darkred    $darkred    $black      $darkred    $darkred
+#client.background       $black
+
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #16a085 #285577 #FFFFFF #16a085   #16a085z
+client.focused_inactive #16a085 #5F676A #FFFFFF #16a085   #16a085
+client.unfocused        #16a085 #222222 #888888 #16a085   #222222
+client.urgent           #2F343A #3078D8 #FFFFFF #3078D8   #3078D8
+client.placeholder #000000 #0C0C0C #FFFFFF #000000 #0C0C0C
 
 floating_modifier $win
 bindsym $win+Return exec --no-startup-id exec urxvt
@@ -91,7 +99,7 @@ bindsym $win+Shift+Return exec --no-startup-id exec $HOME/scripts/fullscreen_wra
 
 bindsym $win+Shift+q kill
 
-bindsym $alt+s exec --no-startup-id ~/scripts/rofi
+bindsym $alt+s exec --no-startup-id ~/git/Scripts/scripts/rofi
 
 bindsym $win+Left focus left
 bindsym $win+Right focus right
@@ -307,7 +315,7 @@ for_window [instance="__scratchpad"] floating enable
 for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)recordmydesktop"] floating enable
 for_window [title="rdesktop - 172.20.2.9"] floating disable, border pixel 1
-for_window [title="*"] border pixel 3
+for_window [class="^.*"] border pixel 3
 
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
@@ -385,4 +393,5 @@ exec --no-startup-id /usr/bin/redshift-gtk &
 exec --no-startup-id /usr/bin/indicator-kdeconnect &
 exec --no-startup-id /home/josh/scripts/wallpaper.sh &
 exec --no-startup-id /usr/bin/clipit &
-exec --no-startup-id /usr/bin/conky -c ~/.i2/conkyrc &
+exec --no-startup-id /usr/bin/conky -c ~/.i3/conkyrc &
+exec --no-startup-id dropbox &

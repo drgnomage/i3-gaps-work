@@ -12,4 +12,4 @@ override_utf8_locale no
 cpu_avg_samples 2
 
 TEXT
-${execi 1 rhythmbox-client --print-playing}  ${uptime_short}  ${kernel}  ${user_terms}  ${time %D %H:%M:%S} 
+${execi 3 rhythmbox-client --print-playing}  ${uptime_short}  ${kernel}  ${execpi 60 perl /home/josh/work_scripts/imap.pl}  ${time %H:%M:%S}  ${time %A %d %B %Y} 
