@@ -6,7 +6,7 @@ own_window_argb_value 220
 own_window_hints below,sticky,skip_taskbar,skip_pager
 out_to_console no
 use_xft yes
-update_interval .2
+update_interval .35
 cpu_avg_samples 2
 net_avg_samples 2
 double_buffer yes
@@ -26,51 +26,51 @@ use_spacer left
 uppercase no
 background yes
 draw_graph_borders no
+text_buffer_size 2048
 
 TEXT
-${font Roboto Mono for Powerline:bold:size=14}
-${font Roboto Mono for Powerline:bold:size=14}${offset 75}${time %d/%m/%Y}
-${font Roboto Mono for Powerline:bold:size=50}${alignc}${time %H:%M}${font Roboto Mono for Powerline:size=9}
-${font Roboto Mono for Powerline:size=22}${color ffffff}
-${font Roboto Mono for Powerline:bold:size=9}${offset 27}RX${goto 60}${font Roboto Mono for Powerline:size=9}${downspeed enp2s0}
-${font Roboto Mono for Powerline:bold:size=9}${offset 27}TX${goto 60}${font Roboto Mono for Powerline:size=9}${upspeed enp2s0} 
-
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}CPU0${goto 60}${font Roboto Mono for Powerline:size=9}${cpubar cpu1 7,155} 
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}CPU1${goto 60}${font Roboto Mono for Powerline:size=9}${cpubar cpu2 7,155} 
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}CPU2${goto 60}${font Roboto Mono for Powerline:size=9}${cpubar cpu3 7,155} 
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}CPU3${goto 60}${font Roboto Mono for Powerline:size=9}${cpubar cpu4 7,155}
-
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}RAM${goto 60}${membar 7,155} 
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}SWAP${goto 60}${swapbar 7,155} 
-
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}HOME${goto 60}${fs_bar 7,155 /home} 
-${font Roboto Mono for Powerline:bold:size=9}${offset 15}ROOT${goto 60}${fs_bar 7,155 /} 
-
-
-
-${font Roboto Mono for Powerline:size=9}${offset 15}${top_time time 1}${goto 95}${font Roboto Mono for Powerline:bold:size=9}${top_time name 1} 
-${font Roboto Mono for Powerline:size=9}${offset 15}${top_time time 2}${goto 95}${font Roboto Mono for Powerline:bold:size=9}${top_time name 2} 
-${font Roboto Mono for Powerline:size=9}${offset 15}${top_time time 3}${goto 95}${font Roboto Mono for Powerline:bold:size=9}${top_time name 3} 
-
-
-${font Roboto Mono for Powerline:size=9}${offset 15}${top_mem mem 1}%${goto 95}${font Roboto Mono for Powerline:bold:size=9}${top_mem name 1} 
-${font Roboto Mono for Powerline:size=9}${offset 15}${top_mem mem 2}%${goto 95}${font Roboto Mono for Powerline:bold:size=9}${top_mem name 2} 
-${font Roboto Mono for Powerline:size=9}${offset 15}${top_mem mem 3}%${goto 95}${font Roboto Mono for Powerline:bold:size=9}${top_mem name 3} 
+${font Ubuntu:size=8}
+${font Ubuntu:bold:size=17}${alignc}${time %A}
+${font Ubuntu:bold:italic:size=14}${alignc}${time %B %d %Y}
+${font Ubuntu:bold:size=50}${alignc}${time %H:%M}${font Ubuntu:size=8}
+${font Ubuntu:size=30}${color eeeeee}
+${font Ubuntu:size=8}${offset 27}RX${goto 60}${font Ubuntu:size=8}${downspeed enp2s0}
+${font Ubuntu:size=8}${offset 27}TX${goto 60}${font Ubuntu:size=8}${upspeed enp2s0} 
+${font Ubuntu:size=12}${color eeeeee}
+${font Ubuntu:size=8}${offset 15}CPU0${goto 60}${font Ubuntu:size=8}${cpubar cpu1 7,155} 
+${font Ubuntu:size=8}${offset 15}CPU1${goto 60}${font Ubuntu:size=8}${cpubar cpu2 7,155} 
+${font Ubuntu:size=8}${offset 15}CPU2${goto 60}${font Ubuntu:size=8}${cpubar cpu3 7,155} 
+${font Ubuntu:size=8}${offset 15}CPU3${goto 60}${font Ubuntu:size=8}${cpubar cpu4 7,155}
+${font Ubuntu:size=12}${color eeeeee}
+${font Ubuntu:size=8}${offset 15}RAM${goto 60}${membar 7,155} 
+${font Ubuntu:size=8}${offset 15}SWAP${goto 60}${swapbar 7,155} 
+${font Ubuntu:size=12}${color eeeeee}
+${font Ubuntu:size=8}${offset 15}HOME${goto 60}${fs_bar 7,155 /home} 
+${font Ubuntu:size=8}${offset 15}ROOT${goto 60}${fs_bar 7,155 /} 
+${font Ubuntu:size=8}${offset 15}VM${goto 60}${fs_bar 7,155 /home/josh/VM} 
+${font Ubuntu:size=8}${offset 15}DATA${goto 60}${fs_bar 7,155 /mnt/Data} 
 
 
 
-${color 16a085}
-${offset 10}${diskiograph 80,195 ffffff DFAF8F 12000M} ${offset 5}
-${offset 20}${font Roboto Mono for Powerline:bold:size=10}${voffset -30}Disk
 
-${offset 10}${downspeedgraph enp2s0 80,195 ffffff 9AB8D7 15000M} ${offset 5}
-${offset 20}${font Roboto Mono for Powerline:bold:size=10}${voffset -30}Down
 
-${offset 10}${upspeedgraph enp2s0 80,195 ffffff DCA3A3 7500M} ${offset 5}
-${offset 20}${font Roboto Mono for Powerline:bold:size=10}${voffset -30}Up
 
-${offset 10}${cpugraph 80,195 ffffff DC8CC3 1} ${offset 5}
-${offset 20}${font Roboto Mono for Powerline:bold:size=10}${voffset -30}CPU
 
-${offset 10}${memgraph 80,195 ffffff 8CD0D3} ${offset 5}
-${offset 20}${font Roboto Mono for Powerline:bold:size=10}${voffset -30}Memory
+
+
+
+
+${offset 30}${diskiograph 80,175 232c31 DFAF8F 12000M} ${offset 5}
+${offset 20}${font Ubuntu:bold:size=10}${voffset -30}Disk
+
+${offset 30}${downspeedgraph enp2s0 80,175 232c31 9AB8D7 15000M} ${offset 5}
+${offset 20}${font Ubuntu:bold:size=10}${voffset -30}Down
+
+${offset 30}${upspeedgraph enp2s0 80,175 232c31 DCA3A3 7500M} ${offset 5}
+${offset 20}${font Ubuntu:bold:size=10}${voffset -30}Up
+
+${offset 30}${cpugraph 80,175 232c31 DC8CC3 1} ${offset 5}
+${offset 20}${font Ubuntu:bold:size=10}${voffset -30}CPU
+
+${offset 30}${memgraph 80,175 232c31 8CD0D3} ${offset 5}
+${offset 20}${font Ubuntu:bold:size=10}${voffset -30}Memory

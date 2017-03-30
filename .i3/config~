@@ -395,4 +395,3 @@ exec --no-startup-id /home/josh/scripts/wallpaper.sh &
 exec --no-startup-id /usr/bin/clipit &
 exec --no-startup-id /usr/bin/conky -c ~/.i3/conkyrc &
 exec --no-startup-id dropbox &
-exec --no-startup-id /home/josh/git/Scripts/scripts/feh.sh &
