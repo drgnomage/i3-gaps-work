@@ -2,7 +2,7 @@ own_window yes
 own_window_type override
 own_window_colour 232c31
 own_window_argb_visual true
-own_window_argb_value 220
+own_window_argb_value 240
 own_window_hints below,sticky,skip_taskbar,skip_pager
 out_to_console no
 use_xft yes

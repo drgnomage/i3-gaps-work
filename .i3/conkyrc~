@@ -30,7 +30,7 @@ text_buffer_size 2048
 
 TEXT
 ${font Ubuntu:size=8}
-${font Ubuntu:bold:size=17}${alignc}${time %A}
+${font Ubuntu:size=17}${alignc}${time %A}
 ${font Ubuntu:bold:italic:size=14}${alignc}${time %B %d %Y}
 ${font Ubuntu:bold:size=50}${alignc}${time %H:%M}${font Ubuntu:size=8}
 ${font Ubuntu:size=30}${color eeeeee}

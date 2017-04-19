@@ -2,24 +2,24 @@ set $win Mod4
 set $alt Mod1
 set $editor nano
 
-set_from_resource $darkred     color1  #c7ae95
-set_from_resource $red         color9  #c7ae95
-set_from_resource $darkgreen   color2  #95c7ae
-set_from_resource $green       color10 #95c7ae
-set_from_resource $darkyellow  color3  #aec795
-set_from_resource $yellow      color11 #aec795
-set_from_resource $darkblue    color4  #ae95c7
-set_from_resource $blue        color12 #ae95c7
-set_from_resource $darkmagenta color5  #c795ae
-set_from_resource $magenta     color13 #c795ae
-set_from_resource $darkcyan    color6  #95aec7
-set_from_resource $cyan        color14 #95aec7
-set_from_resource $darkwhite   color7  #c7ccd1
-set_from_resource $white       color15 #f3f4f5
+set_from_resource $darkred     color1  #2a5491
+set_from_resource $red         color9  #2a5491
+set_from_resource $darkgreen   color2  #237986
+set_from_resource $green       color10 #237986
+set_from_resource $darkyellow  color3  #a03b1e
+set_from_resource $yellow      color11 #a03b1e
+set_from_resource $darkblue    color4  #484d79
+set_from_resource $blue        color12 #484d79
+set_from_resource $darkmagenta color5  #c59820
+set_from_resource $magenta     color13 #c59820
+set_from_resource $darkcyan    color6  #b02f30
+set_from_resource $cyan        color14 #b02f30
+set_from_resource $darkwhite   color7  #EEEEEE
+set_from_resource $white       color15 #EEEEEE
 
-set $black       #282828
-set $darkblack   #1d2021
-set $background  #252525
+set $black       #3f4944
+set $darkblack   #232c31
+set $background  #232c31
 
 set $height 30
 
@@ -78,14 +78,6 @@ floating_maximum_size -1 x -1
 
 font pango:Monospace, Awesome 10
 
-#                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
-#client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
-#client.unfocused        $black      $black      $white      $darkblack  $darkblack
-#client.focused_inactive $black      $black      $white      $darkblack  $darkblack
-#client.urgent           $darkred    $darkred    $black      $darkred    $darkred
-#client.background       $black
-
-# Colors
 # class                 border  backgr. text    indicator child_border
 client.focused          #16a085 #285577 #FFFFFF #16a085   #16a085z
 client.focused_inactive #16a085 #5F676A #FFFFFF #16a085   #16a085
@@ -94,7 +86,7 @@ client.urgent           #2F343A #3078D8 #FFFFFF #3078D8   #3078D8
 client.placeholder #000000 #0C0C0C #FFFFFF #000000 #0C0C0C
 
 floating_modifier $win
-bindsym $win+Return exec --no-startup-id exec urxvt
+bindsym $win+Return exec --no-startup-id exec xfce4-terminal
 bindsym $win+Shift+Return exec --no-startup-id exec $HOME/scripts/fullscreen_wrap.sh $editor --name __scratchpad
 
 bindsym $win+Shift+q kill
@@ -296,7 +288,11 @@ mode "$wine_brightness" {
     bindsym Escape mode "default"
 }
 
+bindsym $alt+space floating enable, resize set 1615 px 1035 px, border pixel 3, move position 24 px 24 px
+
 new_window none
+
+for_window [class="^.*"] border pixel 3
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -315,7 +311,7 @@ for_window [instance="__scratchpad"] floating enable
 for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)recordmydesktop"] floating enable
 for_window [title="rdesktop - 172.20.2.9"] floating disable, border pixel 1
-for_window [class="^.*"] border pixel 3
+for_window [title="mpv*"] floating enable, resize set 600 px 345 px, border none, move position 3230 px 40 px
 
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
@@ -336,16 +332,16 @@ bar {
 	mode hide
 
     colors {
-        statusline         $white
-        background         $background
-        separator          $background
+        statusline         #eeeeee
+        background         #232c31
+        separator          #16a085
 
-#                          BORDER       BACKGROUND   TEXT
-        focused_workspace  $background $background $darkwhite
-        inactive_workspace $background $background $white
-        active_workspace   $background $background $white
-        urgent_workspace   $darkred     $darkred     $background
-        binding_mode       $darkred     $darkred     $background
+#                          BORDER       BACKGROUND  TEXT
+        focused_workspace  #16a085		#16a085     #232c31
+        inactive_workspace #16a085		#232c31		#eeeeee
+        active_workspace   #888888		#888888		#232c31
+        urgent_workspace   #16a085		#16a085		#232c31
+        binding_mode       #16a085		#16a085		#232c31
     }
 }
 bar {
@@ -365,16 +361,16 @@ bar {
 	mode hide
 
     colors {
-        statusline         $white
-        background         $background
-        separator          $background
+        statusline         #eeeeee
+        background         #232c31
+        separator          #16a085
 
-#                          BORDER       BACKGROUND   TEXT
-        focused_workspace  $background $background $darkwhite
-        inactive_workspace $background $background $white
-        active_workspace   $background $background $white
-        urgent_workspace   $darkred     $darkred     $background
-        binding_mode       $darkred     $darkred     $background
+#                          BORDER       BACKGROUND  TEXT
+        focused_workspace  #16a085		#16a085     #232c31
+        inactive_workspace #16a085		#232c31		#eeeeee
+        active_workspace   #888888		#888888		#232c31
+        urgent_workspace   #16a085		#16a085		#232c31
+        binding_mode       #16a085		#16a085		#232c31
     }
 }
 
@@ -385,7 +381,7 @@ exec --no-startup-id compton -b &
 exec --no-startup-id nm-applet &
 exec --no-startup-id dunst &
 exec --no-startup-id xrdb ~/.Xdefaults &
-exec --no-startup-id /usr/bin/synergys -f --no-tray --debug INFO --name Optiplex-3020 --enable-crypto -c /tmp/Synergy.J11411 --address :24800 -c /home/josh/.synergy/synergy.conf &
+#exec --no-startup-id /usr/bin/synergys -f --no-tray --debug INFO --name Optiplex-3020 --enable-crypto -c /tmp/Synergy.J11411 --address :24800 -c /home/josh/.synergy/synergy.conf &
 exec --no-startup-id /opt/teamviewer/tv_bin/TeamViewer &
 exec --no-startup-id xedgewarp -b &
 exec --no-startup-id xbindkeys -p &
@@ -395,3 +391,4 @@ exec --no-startup-id /home/josh/scripts/wallpaper.sh &
 exec --no-startup-id /usr/bin/clipit &
 exec --no-startup-id /usr/bin/conky -c ~/.i3/conkyrc &
 exec --no-startup-id dropbox &
+exec --no-startup-id /home/josh/git/Scripts/scripts/feh.sh &
