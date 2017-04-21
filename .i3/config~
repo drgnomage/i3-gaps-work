@@ -288,7 +288,7 @@ mode "$wine_brightness" {
     bindsym Escape mode "default"
 }
 
-bindsym $alt+space floating enable, resize set 1615 px 1029 px, border pixel 3, move position 24 px 24 px
+bindsym $alt+space floating enable, resize set 1619 px 1034 px, border none, move position 24 px 24 px
 
 new_window none
 
@@ -310,7 +310,7 @@ for_window [class="(?i)blueman"] floating enable
 for_window [instance="__scratchpad"] floating enable
 for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)recordmydesktop"] floating enable
-for_window [title="rdesktop - 172.20.2.9"] floating enable, resize set 1620 px 1035 px, border none, move position 24 px 24 px
+for_window [title="rdesktop - 172.20.2.9"] floating enable, resize set 1625 px 1040 px, border none, move position 24 px 24 px
 for_window [title="mpv*"] floating enable, resize set 600 px 345 px, border none, move position 3230 px 40 px
 
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse

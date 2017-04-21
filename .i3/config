@@ -288,7 +288,7 @@ mode "$wine_brightness" {
     bindsym Escape mode "default"
 }
 
-bindsym $alt+space floating enable, resize set 1615 px 1029 px, border pixel 3, move position 24 px 24 px
+bindsym $alt+space floating enable, resize set 1619 px 1034 px, border pixel 3, move position 24 px 24 px
 
 new_window none
 

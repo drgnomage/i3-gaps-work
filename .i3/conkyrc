@@ -17,7 +17,7 @@ border_width 3
 default_color 16a085
 default_shade_color 000000
 default_outline_color 000000
-alignment top_right
+alignment bottom_right
 gap_x 30
 gap_y 30
 use_spacer left
@@ -25,46 +25,56 @@ uppercase no
 background yes
 draw_graph_borders no
 text_buffer_size 2048
-color0 232c31
-color1 2a5491
-color2 237986
-color3 a03b1e
-color4 484d79
-color5 c59820
-color6 b02f30
-color7 b5d8f6
-color8 16a085
-color9 9ea7a6
+color0 3f3f3f
+color1 705050
+color2 60b48a
+color3 dfaf8f
+color4 9ab8d7
+color5 dc8cc3
+color6 8cd0d3
+color7 dcdcdc
+color8 709080
+color9 16a085
 
 TEXT
-${font Roboto Mono:size=8}
-${font Roboto Mono:size=17}${alignc}${time %A}
-${font Roboto Mono:bold:italic:size=14}${alignc}${time %B %d %Y}
-${font Roboto Mono:bold:size=50}${goto 50}${color7}${time %H}${font Roboto Mono:bold:size=40}${goto 130}${color6}${voffset -4}${time %M}${font Roboto Mono:bold:size=15}${goto 195}${color2}${voffset -10}${time %S}${font Roboto Mono:size=8}
-${font Roboto Mono:size=15}
-${font Roboto Mono:size=15}${color8}${hr 1}${color7}
+${font Roboto Mono:size=6}
+${font Roboto Mono:size=17}${color6}${alignc}${time %A}
+${font Roboto Mono:bold:italic:size=14}${alignc}${color2}${time %B %d %Y}
+${font Roboto Mono:bold:size=50}${goto 40}${color7}${time %H}${font Roboto Mono:bold:size=40}${goto 120}${color6}${voffset -4}${time %M}${font Roboto Mono:bold:size=15}${goto 185}${color2}${voffset -6}${time %S}${font Roboto Mono:size=8}
+${font Roboto Mono:size=6}
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
 ${font Roboto Mono:bold:size=8}${offset 27}RX${goto 65}${font Roboto Mono:size=8}${color2}${downspeed enp2s0}${color7}
-${font Roboto Mono:bold:size=8}${offset 27}TX${goto 65}${font Roboto Mono:size=8}${color6}${upspeed enp2s0}${color7}
-${font Roboto Mono:size=15}${color8}${hr 1}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}CPU0${goto 65}${font Roboto Mono:size=8}${color3}${cpubar cpu1 7,150}${color7} 
-${font Roboto Mono:bold:size=8}${offset 15}CPU1${goto 65}${font Roboto Mono:size=8}${color2}${cpubar cpu2 7,150}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}CPU2${goto 65}${font Roboto Mono:size=8}${color1}${cpubar cpu3 7,150}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}CPU3${goto 65}${font Roboto Mono:size=8}${color4}${cpubar cpu4 7,150}${color7}
-${font Roboto Mono:size=15}${color8}${hr 1}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}RAM${goto 65}${color1}${membar 7,150}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}SWAP${goto 65}${color2}${swapbar 7,150}${color7}
-${font Roboto Mono:size=15}${color8}${hr 1}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}HOME${goto 65}${color3}${fs_bar 7,150 /home}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}ROOT${goto 65}${color2}${fs_bar 7,150 /}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}VM${goto 65}${color1}${fs_bar 7,150 /home/josh/VM}${color7}
-${font Roboto Mono:bold:size=8}${offset 15}DATA${goto 65}${color4}${fs_bar 7,150 /mnt/Data}${color7}
-${font Roboto Mono:size=15}${color8}${hr 1}${color7}
-${goto 20}${diskiograph 80,195 232c31 DFAF8F 12000M} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -20}Disk
-${font Roboto Mono:bold:size=15}
-${goto 20}${downspeedgraph enp2s0 80,195 232c31 9AB8D7 15000M} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}Down
-${font Roboto Mono:bold:size=15}
-${goto 20}${upspeedgraph enp2s0 80,195 232c31 DCA3A3 7500M} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}Up
-${font Roboto Mono:bold:size=15}
-${goto 20}${cpugraph 80,195 232c31 DC8CC3 1} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}CPU
-${font Roboto Mono:bold:size=15}
-${goto 20}${memgraph 80,195 232c31 8CD0D3} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}Memory
+${font Roboto Mono:bold:size=8}${offset 27}TX${goto 65}${font Roboto Mono:size=8}${color3}${upspeed enp2s0}${color7}
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}CPU0${goto 65}${font Roboto Mono:size=8}${color2}${cpubar cpu1 7,150}${color7} 
+${font Roboto Mono:bold:size=8}${offset 15}CPU1${goto 65}${font Roboto Mono:size=8}${color3}${cpubar cpu2 7,150}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}CPU2${goto 65}${font Roboto Mono:size=8}${color4}${cpubar cpu3 7,150}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}CPU3${goto 65}${font Roboto Mono:size=8}${color5}${cpubar cpu4 7,150}${color7}
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}RAM${goto 65}${color4}${membar 7,150}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}SWAP${goto 65}${color5}${swapbar 7,150}${color7}
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}HOME${goto 65}${color2}${fs_bar 7,150 /home}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}ROOT${goto 65}${color3}${fs_bar 7,150 /}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}VM${goto 65}${color4}${fs_bar 7,150 /home/josh/VM}${color7}
+${font Roboto Mono:bold:size=8}${offset 15}DATA${goto 65}${color5}${fs_bar 7,150 /mnt/Data}${color7}
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${goto 20}${diskiograph 40,195 232c31 DFAF8F 12000M} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -20}Disk
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${goto 20}${downspeedgraph enp2s0 40,195 232c31 9AB8D7 15000M} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}Down
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${goto 20}${upspeedgraph enp2s0 40,195 232c31 DCA3A3 7500M} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}Up
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${goto 20}${cpugraph 40,195 232c31 DC8CC3 1} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}CPU
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${goto 20}${memgraph 40,195 232c31 8CD0D3} ${offset 5}${goto 20}${font Roboto Mono:bold:size=10}${voffset -15}Memory
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${goto 20}${font Roboto Mono:bold:size=10}Hostname
+${goto 30}${font Roboto Mono:size=9}${nodename}
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${goto 20}${font Roboto Mono:bold:size=10}IP
+${goto 30}${font Roboto Mono:size=9}${addr enp2s0}
+${font Roboto Mono:size=15}${color9}${hr 1}${color7}
+${image /home/josh/Pictures/overlays/Rick.png  -p  145,920 -s 80x100}
+${image /home/josh/Pictures/overlays/Portal.png  -p  75,920 -s 80x100}
+${image /home/josh/Pictures/overlays/Head.png  -p  0,920 -s 80x100}
