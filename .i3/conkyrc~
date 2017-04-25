@@ -43,7 +43,7 @@ ${font Roboto Mono:bold:italic:size=14}${alignc}${color2}${time %B %d %Y}
 ${font Roboto Mono:bold:size=50}${goto 40}${color7}${time %H}${font Roboto Mono:bold:size=40}${goto 120}${color6}${voffset -4}${time %M}${font Roboto Mono:bold:size=15}${goto 185}${color2}${voffset -6}${time %S}${font Roboto Mono:size=8}
 ${font Roboto Mono:size=6}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${goto 15}${font Roboto Mono:bold:size=11}${exec echo $USER}|${nodename}
+${goto 15}${font Roboto Mono:bold:size=11}${exec echo $USER}/${nodename}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
 ${goto 15}${font Roboto Mono:bold:size=10}IP:${goto 100}${font Roboto Mono:size=9}${addr enp2s0}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
