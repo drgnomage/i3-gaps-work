@@ -9,7 +9,7 @@ cpu_avg_samples 2
 net_avg_samples 2
 double_buffer yes
 maximum_width 220
-minimum_size 220 1020
+minimum_size 220 1054
 draw_shades no
 draw_outline no
 draw_borders yes
@@ -17,9 +17,9 @@ border_width 3
 default_color 16a085
 default_shade_color 000000
 default_outline_color 000000
-alignment bottom_right
-gap_x 30
-gap_y 30
+alignment top_right
+gap_x 13
+gap_y 13
 use_spacer left
 uppercase no
 background yes
@@ -40,16 +40,18 @@ TEXT
 ${font Roboto Mono:size=6}
 ${font Roboto Mono:size=17}${color6}${alignc}${time %A}
 ${font Roboto Mono:bold:italic:size=14}${alignc}${color2}${time %B %d %Y}
-${font Roboto Mono:bold:size=50}${goto 40}${color7}${time %H}${font Roboto Mono:bold:size=40}${goto 120}${color6}${voffset -4}${time %M}${font Roboto Mono:bold:size=15}${goto 185}${color2}${voffset -6}${time %S}${font Roboto Mono:size=8}
+${font Roboto Mono:bold:size=50}${color7}${goto 20}${time %H}${font Roboto Mono:bold:size=25}${color6}${offset -5}${voffset -14}:${font Roboto Mono:bold:size=40}${color6}${offset -3}${voffset -8}${time %M}${font Roboto Mono:bold:size=10}${color6}${voffset -15}${offset -3}:${font Roboto Mono:bold:size=15}${color2}${voffset -3}${time %S}${font Roboto Mono:size=8}
 ${font Roboto Mono:size=6}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${goto 15}${font Roboto Mono:bold:size=11}${exec echo $USER}/${nodename}
+${font Roboto Mono:bold:size=11}${alignc}${exec echo $USER} / ${nodename}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${goto 15}${font Roboto Mono:bold:size=10}IP:${goto 100}${font Roboto Mono:size=9}${addr enp2s0}
+${font Roboto Mono:bold:size=10}${goto 15}Securus:${goto 130}${execi 10 /home/josh/work_scripts/totp securus}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${goto 15}${font Roboto Mono:bold:size=10}Uptime:${goto 100}${font Roboto Mono:size=9}${uptime}
+${goto 15}${font Roboto Mono:bold:size=10}IP:${goto 130}${addr enp2s0}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${font Roboto Mono:bold:size=8}${goto 15}RX${goto 50}${font Roboto Mono:size=8}${color2}${downspeed enp2s0}${color7}${goto 130}TX${goto 150}${font Roboto Mono:size=8}${color3}${upspeed enp2s0}${color7}
+${goto 15}${font Roboto Mono:bold:size=10}Uptime:${goto 130}${uptime}
+${font Roboto Mono:size=12}${color9}${hr 1}${color7}
+${font Roboto Mono:bold:size=8}${goto 15}RX${goto 50}${font Roboto Mono:size=8}${color2}${downspeed enp2s0}${color7}${goto 130}${font Roboto Mono:bold:size=8}TX${goto 150}${font Roboto Mono:size=8}${color3}${upspeed enp2s0}${color7}
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
 ${font Roboto Mono:bold:size=8}${goto 15}CPU0${goto 65}${font Roboto Mono:size=8}${color2}${cpubar cpu1 7,150}${color7} 
 ${font Roboto Mono:bold:size=8}${goto 15}CPU1${goto 65}${font Roboto Mono:size=8}${color3}${cpubar cpu2 7,150}${color7}
@@ -74,4 +76,4 @@ ${goto 5}${cpugraph 50,220 232c31 DC8CC3 1}${goto 15}${font Roboto Mono:bold:siz
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
 ${goto 5}${memgraph 50,220 232c31 8CD0D3}${goto 15}${font Roboto Mono:bold:size=10}${voffset -15}Memory
 ${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${image /home/josh/Pictures/overlays/Rick.png  -p  55,860 -s 120x180}
+${image /home/josh/Pictures/overlays/Rick.png  -p  55,890 -s 120x180}
