@@ -311,7 +311,7 @@ for_window [instance="__scratchpad"] floating enable
 for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)recordmydesktop"] floating enable
 for_window [title="rdesktop - 172.20.2.9"] floating enable, resize set 1672 px 1074 px, border none, move position 6 px 6 px
-for_window [title="mpv*"] floating enable, resize set 600 px 345 px, border none, move position 3230 px 40 px
+for_window [title="mpv floating"] floating enable, resize set 600 px 345 px, border none, move position 3230 px 40 px
 
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
@@ -391,6 +391,7 @@ exec --no-startup-id /usr/bin/indicator-kdeconnect &
 exec --no-startup-id /home/josh/scripts/wallpaper.sh &
 exec --no-startup-id /usr/bin/clipit &
 exec --no-startup-id /usr/bin/conky -c ~/.i3/conkyrc &
+exec --no-startup-id /usr/bin/conky -c ~/.i3/conkyrc2 &
 exec --no-startup-id dropbox &
 exec --no-startup-id /home/josh/git/Scripts/scripts/feh.sh &
 
