@@ -1,27 +1,11 @@
 set $win Mod4
 set $alt Mod1
+set $ctrl control
+
+set $height 20
 set $editor nano
-
-set_from_resource $darkred     color1  #2a5491
-set_from_resource $red         color9  #2a5491
-set_from_resource $darkgreen   color2  #237986
-set_from_resource $green       color10 #237986
-set_from_resource $darkyellow  color3  #a03b1e
-set_from_resource $yellow      color11 #a03b1e
-set_from_resource $darkblue    color4  #484d79
-set_from_resource $blue        color12 #484d79
-set_from_resource $darkmagenta color5  #c59820
-set_from_resource $magenta     color13 #c59820
-set_from_resource $darkcyan    color6  #b02f30
-set_from_resource $cyan        color14 #b02f30
-set_from_resource $darkwhite   color7  #EEEEEE
-set_from_resource $white       color15 #EEEEEE
-
-set $black       #3f4944
-set $darkblack   #232c31
-set $background  #232c31
-
-set $height 30
+set $border1 border pixel 2
+set $border2 border normal 2
 
 set $ws1   "1: I "
 set $ws2   "2: II "
@@ -31,93 +15,121 @@ set $ws5   "5: V "
 set $ws6   "6: VI "
 set $ws7   "7: VII "
 set $ws8   "8: VIII "
-set $ws9   "9: IX "
-set $ws10  "10: X "
-set $ws11  "11: XI "
-set $ws12  "12: XII "
-set $ws13  "13: XIII "
-set $ws14  "14: XIV "
-set $ws15  "15: XV "
-set $ws16  "16: XVI "
-set $ws17  "17: XVII "
-set $ws18  "18: XVIII "
-set $ws19  "19: XIX "
-set $ws20  "20: XX "
-set $telegram "31: "
+set $telegram "31:  "
+set $firefox "33:  "
+set $music "34:  "
+set $licence "35:   "
+set $hexchat "36:  "
+set $transmission "37:  "
+set $youtube "38:  "
+set $steam "39:  "
+set $windows "41:  "
+set $dot "42:  "
+set $teamviewer "43:  "
 
-workspace $ws1 output HDMI1
-workspace $ws2 output HDMI1
-workspace $ws3 output HDMI1
-workspace $ws4 output HDMI1
-workspace $ws5 output HDMI1
-workspace $ws6 output HDMI1
-workspace $ws7 output HDMI1
-workspace $ws8 output HDMI1
-workspace $ws9 output VGA1
-workspace $ws10 output VGA1
-workspace $ws11 output VGA1
-workspace $ws12 output VGA1
-workspace $ws14 output VGA1
-workspace $ws15 output VGA1
-workspace $ws16 output VGA1
+bindsym $alt+$ctrl+Right workspace next_on_output
+bindsym $alt+$ctrl+Left workspace prev_on_output
 
-assign [title="Telegram*"] → $telegram
-for_window [title="Telegram*"] move container to workspace $telegram
+workspace $ws1 output VGA1
+workspace $ws2 output VGA1
+workspace $ws3 output VGA1
+workspace $ws4 output VGA1
+workspace $ws5 output VGA1
+workspace $ws6 output VGA1
+workspace $ws7 output VGA1
+workspace $ws8 output VGA1
+workspace $telegram output VGA1
+workspace $youtube output VGA1
+workspace $firefox output VGA1
+workspace $music output VGA1
+workspace $licence output VGA1
+workspace $hexchat output VGA1
+workspace $transmission output VGA1
+workspace $steam output VGA1
+workspace $windows output HDMI1
+workspace $dot output HDMI1
+workspace $teamviewer output HDMI1
 
-set $default_gaps_inner 8
-set $default_gaps_outer -2
-gaps inner $default_gaps_inner
-gaps outer $default_gaps_outer
+assign [class="Telegram"] → $telegram
+for_window [class="Telegram"] move container to workspace $telegram
 
-workspace_auto_back_and_forth yes
+assign [class="Firefox"] → $firefox
+for_window [class="Firefox"] move container to workspace $firefox
+
+assign [class="Rhythmbox"] → $music
+for_window [class="Rhythmbox"] move container to workspace $music
+
+assign [title="Securus license manager"] → $licence
+for_window [title="Securus license manager"] move container to workspace $licence
+
+assign [class="Hexchat"] → $hexchat
+for_window [class="Hexchat"] move container to workspace $hexchat
+
+assign [class="rdesktop"] → $windows
+for_window [class="rdesktop"] move container to workspace $windows
+
+assign [title=".* TeamViewer .*"] → $teamviewer
+for_window [title=".* TeamViewer .*"] move container to workspace $teamviewer
+
+assign [class="Steam"] → $steam
+for_window [class="Steam"] move container to workspace $steam
+
+assign [class="Crossover"] → $steam
+for_window [class="Crossover"] move container to workspace $steam
+
+assign [class="Transmission"] → $transmission
+for_window [class="Transmission"] move container to workspace $transmission
+
+assign [title="Subscriptions - YouTube - Mozilla Firefox"] → $youtube
+for_window [title="Subscriptions - YouTube - Mozilla Firefox"] move container to workspace $youtube
+
+gaps inner 4
+gaps outer 42
+
 force_display_urgency_hint 0 ms
 focus_on_window_activation urgent
 
 floating_minimum_size -1 x -1
 floating_maximum_size -1 x -1
 
-font pango:Monospace, Awesome 10
+font xft:Monospace, Awesome 10
+
+set $highl #0EE9F7
+set $backg #232c31
+set $textw #EBEBEB
+set $inact #261B36
+set $activ #7AEF14
+set $urgen #FF214E
+set $grey #686E7A
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #16a085 #285577 #FFFFFF #16a085   #16a085z
-client.focused_inactive #16a085 #5F676A #FFFFFF #16a085   #16a085
-client.unfocused        #16a085 #222222 #888888 #16a085   #222222
-client.urgent           #2F343A #3078D8 #FFFFFF #3078D8   #3078D8
-client.placeholder #000000 #0C0C0C #FFFFFF #000000 #0C0C0C
+client.focused          $activ	$activ	$backg	$activ	$activ
+client.focused_inactive $highl	$highl	$backg	$highl	$highl
+client.unfocused        $highl	$highl	$backg	$highl	$highl
+client.urgent           $urgen	$urgen	$backg	$urgen	$urgen
+client.placeholder      $activ	$activ	$backg	$highl	$highl
 
 floating_modifier $win
 bindsym $win+Return exec --no-startup-id exec xfce4-terminal
-bindsym $win+Shift+Return exec --no-startup-id exec $HOME/scripts/fullscreen_wrap.sh $editor --name __scratchpad
-
-bindsym $win+Shift+q kill
-
 bindsym $alt+s exec --no-startup-id ~/git/Scripts/scripts/rofi
-
+bindsym $win+l exec --no-startup-id ~/git/Scripts/scripts/lock-overlay.sh
+bindsym $win+w exec --no-startup-id sh ~/.fehbg && notify-send -i /home/josh/.icons/oomox-232c31-flat/apps/scalable/gnome-photos.svg "Loading next wallpaper..."
+bindsym $win+Shift+q kill
 bindsym $win+Left focus left
 bindsym $win+Right focus right
 bindsym $win+Up focus up
 bindsym $win+Down focus down
-
-bindsym $win+Shift+Left move left 35px
-bindsym $win+Shift+Down move down 35px
-bindsym $win+Shift+Up move up 35px
-bindsym $win+Shift+Right move right 35px
-
+bindsym $win+Shift+Up move container up
+bindsym $win+Shift+Down move container down
+bindsym $win+Shift+Left move container left
+bindsym $win+Shift+Right move container right
 bindsym $win+h split h
 bindsym $win+v split v
-
-# Until I figure out a better way to use this key
-bindsym Hyper_L fullscreen
 bindsym $win+f fullscreen
 bindsym $win+g fullscreen global
-
-bindsym $win+s layout stacking
-bindsym $win+w layout tabbed
-bindsym $win+e layout toggle split
-
-bindsym $win+Shift+space floating toggle
-bindsym $win+space focus mode_toggle
-
+bindsym $win+s sticky toggle
+bindsym $win+Shift+space floating enable, $border2
+bindsym $win+space floating disable, $border1
 bindsym $win+a focus parent
 bindsym $win+Shift+a focus child
 
@@ -129,23 +141,17 @@ bindsym $win+5 workspace $ws5
 bindsym $win+6 workspace $ws6
 bindsym $win+7 workspace $ws7
 bindsym $win+8 workspace $ws8
-bindsym $win+F1 workspace $ws9
-bindsym $win+F2 workspace $ws10
-bindsym $win+F3 workspace $ws11
-bindsym $win+F4 workspace $ws12
-bindsym $win+F5 workspace $ws13
-bindsym $win+F6 workspace $ws14
-bindsym $win+F7 workspace $ws15
-bindsym $win+F8 workspace $ws16
-
-bindsym $win+$shift+Tab workspace back_and_forth
-
-bindsym $win+Shift+minus move scratchpad
-bindsym $win+Shift+plus scratchpad show
-
-bindsym $win+Shift+s sticky toggle
-# put YouTube into fullscreen and execute this for media mode
-bindsym $win+y fullscreen disable; floating enable; resize set 600 400; sticky enable; move window to position 1940 54
+bindsym $win+F1 workspace $telegram
+bindsym $win+F2 workspace $firefox
+bindsym $win+F3 workspace $music
+bindsym $win+F4 workspace $licence
+bindsym $win+F5 workspace $hexchat
+bindsym $win+F6 workspace $transmission
+bindsym $win+F7 workspace $steam
+bindsym $win+F8 workspace $youtube
+bindsym $win+$alt+w workspace $windows
+bindsym $win+o workspace $dot
+bindsym $win+t workspace $teamviewer
 
 bindsym $win+Shift+1 move container to workspace number $ws1
 bindsym $win+Shift+2 move container to workspace number $ws2
@@ -155,243 +161,121 @@ bindsym $win+Shift+5 move container to workspace number $ws5
 bindsym $win+Shift+6 move container to workspace number $ws6
 bindsym $win+Shift+7 move container to workspace number $ws7
 bindsym $win+Shift+8 move container to workspace number $ws8
-bindsym $win+Shift+F1 move container to workspace number $ws9
-bindsym $win+Shift+F2 move container to workspace number $ws10
-bindsym $win+Shift+F3 move container to workspace number $ws11
-bindsym $win+Shift+F4 move container to workspace number $ws12
-bindsym $win+Shift+F5 move container to workspace number $ws13
-bindsym $win+Shift+F6 move container to workspace number $ws14
-bindsym $win+Shift+F7 move container to workspace number $ws15
-bindsym $win+Shift+F8 move container to workspace number $ws16
+bindsym $win+Shift+F1 move container to workspace number $telegram
+bindsym $win+Shift+F2 move container to workspace number $firefox
+bindsym $win+Shift+F3 move container to workspace number $music
+bindsym $win+Shift+F4 move container to workspace number $licence
+bindsym $win+Shift+F5 move container to workspace number $hexchat
+bindsym $win+Shift+F6 move container to workspace number $transmission
+bindsym $win+Shift+F7 move container to workspace number $steam
+bindsym $win+Shift+F8 move container to workspace number $youtube
+bindsym $win+Shift+w move container to workspace number $windows
+bindsym $win+Shift+o move container to workspace number $dot
+bindsym $win+Shift+t move container to workspace number $teamviewer
 
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/scripts/volume_control.py down 5
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/scripts/volume_control.py up 5
-bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/volume_control.py toggle
-bindsym $win+Shift+v exec --no-startup-id "killall pavucontrol; $HOME/scripts/fullscreen_wrap.sh pavucontrol -t 3"
-
-bindsym XF86MonBrightnessDown exec --no-startup-id ${HOME}/scripts/backlight.sh -dec 10
-bindsym XF86MonBrightnessUp exec --no-startup-id ${HOME}/scripts/backlight.sh -inc 10
-
-bindsym $win+Shift+w exec --no-startup-id $editor --name "__nmtui" -e "nmtui-connect"
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
 
 bindsym $win+Shift+c reload
 bindsym $win+Shift+r restart
 
-# screenshot
-bindsym --release Print exec --no-startup-id "maim -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
-bindsym --release Shift+Print exec --no-startup-id "maim -s -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
-
-bindsym $win+n exec --no-startup-id thunar
-
-set $wine_resize resize
-bindsym $win+r mode "$wine_resize"
-mode "$wine_resize" {
-    bindsym Left resize shrink width 10 px or 1 ppt
-    bindsym Down resize grow height 10 px or 1 ppt
-    bindsym Up resize shrink height 10 px or 1 ppt
-    bindsym Right resize grow width 10 px or 1 ppt
-
-    bindsym Shift+Left resize shrink width 20 px or 5 ppt
-    bindsym Shift+Down resize grow height 20 px or 5 ppt
-    bindsym Shift+Up resize shrink height 20 px or 5 ppt
-    bindsym Shift+Right resize grow width 20 px or 5 ppt
-
-    bindsym s mode "default", exec --no-startup-id $HOME/scripts/slopsize.sh
-
-    bindsym 1 mode "default", resize set 1000 600
-    bindsym 2 mode "default", resize set 1500 600
-    bindsym 3 mode "default", resize set 1200 1000
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-set $wine_power power
-bindsym Mod1+Control+l mode "$wine_power"
-mode "$wine_power" {
-    bindsym l mode "default", exec --no-startup-id $HOME/.i3/i3exit lock
-    bindsym e mode "default", exec --no-startup-id $HOME/.i3/i3exit logout
-    bindsym s mode "default", exec --no-startup-id $HOME/.i3/i3exit suspend
-    bindsym h mode "default", exec --no-startup-id $HOME/.i3/i3exit hibernate
-    bindsym r mode "default", exec --no-startup-id $HOME/.i3/i3exit reboot
-    bindsym p mode "default", exec --no-startup-id $HOME/.i3/i3exit shutdown
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-set $wine_gaps gaps
-set $wine_gaps_outer outer gaps
-set $wine_gaps_inner inner gaps
-bindsym $win+Shift+g mode "$wine_gaps"
-mode "$wine_gaps" {
-    bindsym o      mode "$wine_gaps_outer"
-    bindsym i      mode "$wine_gaps_inner"
-
-    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
-    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-mode "$wine_gaps_inner" {
-    bindsym plus  gaps inner current plus 5
-    bindsym minus gaps inner current minus 5
-    bindsym 0     mode "default", gaps inner current set 0
-    bindsym d     mode "default", gaps inner current set $default_gaps_inner
-
-    bindsym Shift+plus  gaps inner all plus 5
-    bindsym Shift+minus gaps inner all minus 5
-    bindsym Shift+0     mode "default", gaps inner all set 0
-    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-mode "$wine_gaps_outer" {
-    bindsym plus  gaps outer current plus 5
-    bindsym minus gaps outer current minus 5
-    bindsym 0     mode "default", gaps outer current set 0
-    bindsym d     mode "default", gaps outer current set $default_gaps_outer
-
-    bindsym Shift+plus  gaps outer all plus 5
-    bindsym Shift+minus gaps outer all minus 5
-    bindsym Shift+0     mode "default", gaps outer all set 0
-    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-set $wine_brightness brightness
-bindsym $win+Shift+b mode "$wine_brightness"
-mode "$wine_brightness" {
-    bindsym plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 10
-    bindsym minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 10
-    bindsym Shift+plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 1
-    bindsym Shift+minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 1
-
-    bindsym 0     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 100
-    bindsym 1     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 10
-    bindsym 2     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 20
-    bindsym 3     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 30
-    bindsym 4     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 40
-    bindsym 5     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 50
-    bindsym 6     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 60
-    bindsym 7     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 70
-    bindsym 8     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 80
-    bindsym 9     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 90
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $alt+space floating enable, resize set 1666 px 1068 px, border pixel 3, move position 6 px 6 px
+bindsym --release Print exec --no-startup-id gnome-screenshot && notify-send -i /home/josh/.icons/oomox-232c31-flat/apps/scalable/gnome-photos.svg "Saving screenshot"
+bindsym --release $win+Print exec --no-startup-id gnome-screenshot -w && notify-send -i /home/josh/.icons/oomox-232c31-flat/apps/scalable/gnome-photos.svg "Saving screenshot"
+bindsym Shift+Print exec --no-startup-id gnome-screenshot -i && notify-send -i /home/josh/.icons/oomox-232c31-flat/apps/scalable/gnome-photos.svg "Saving screenshot"
+bindsym $ctrl+Print exec --no-startup-id gnome-screenshot -c 3 && notify-send -i /home/josh/.icons/oomox-232c31-flat/apps/scalable/gnome-photos.svg "Saving screenshot"
+bindsym $alt+Print exec --no-startup-id gnome-screenshot -a && notify-send -i /home/josh/.icons/oomox-232c31-flat/apps/scalable/gnome-photos.svg "Saving screenshot"
 
 new_window none
 
-for_window [class="^.*"] border pixel 3
-
+for_window [class="^.*"] $border1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
-
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-
-for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down $height px
-for_window [class="(?i)qemu-system"] floating enable
-for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
-for_window [class="(?i)blueman"] floating enable
-
-for_window [instance="__scratchpad"] floating enable
-for_window [instance="__nmtui"] floating enable
-for_window [class="(?i)recordmydesktop"] floating enable
-for_window [title="rdesktop - 172.20.2.9"] floating enable, resize set 1672 px 1074 px, border none, move position 6 px 6 px
-for_window [title="mpv floating"] floating enable, resize set 600 px 345 px, border none, move position 3230 px 40 px
-
+for_window [title="Hearthstone"] floating enable
+for_window [title="Blizzard App"] floating enable
+for_window [title="CrossOver"] floating enable
+for_window [class="Steam"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
-for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
+for_window [class="mpv"] floating enable, resize set 600 px 345 px, border none, move position 3222 px 722 px, sticky enable
+for_window [class="rdesktop"] floating disable
 
 bar {
     output VGA1
-    i3bar_command i3bar
     position top
-    font pango:Monospace, Awesome 10
+    font xft:Awesome, Hack, Monospace 10
     strip_workspace_numbers yes
-    separator_symbol "■"
-    bindsym button4 nop
-    bindsym button5 nop
     tray_output VGA1
-    tray_padding 5
+    tray_padding 4
     height $height
 	hidden_state hide
 	mode hide
 
     colors {
-        statusline         #eeeeee
-        background         #232c31
-        separator          #16a085
+        statusline         $textw
+        background         $backg
+        separator          $highl
 
 #                          BORDER       BACKGROUND  TEXT
-        focused_workspace  #16a085		#16a085     #232c31
-        inactive_workspace #16a085		#232c31		#eeeeee
-        active_workspace   #888888		#888888		#232c31
-        urgent_workspace   #16a085		#16a085		#232c31
-        binding_mode       #16a085		#16a085		#232c31
+        focused_workspace  $highl		$highl		$backg
+        inactive_workspace $backg		$backg		$textw
+        active_workspace   $activ		$activ		$backg
+        urgent_workspace   $urgen		$urgen		$backg
+        binding_mode       $highl		$highl		$backg
     }
 }
 
 bar {
     output HDMI1
-    status_command conky -c ~/.i3/conky.bar
-    i3bar_command i3bar
+    status_command i3status-rs ~/.i3/config.toml
     position top
-    font pango:Monospace, Awesome 10
+    font xft:Awesome, Hack, Monospace 10
     strip_workspace_numbers yes
-    separator_symbol "■"
-    bindsym button4 nop
-    bindsym button5 nop
     tray_output VGA1
-    tray_padding 0
     height $height
 	hidden_state hide
 	mode hide
 
     colors {
-        statusline         #eeeeee
-        background         #232c31
-        separator          #16a085
+        statusline         $textw
+        background         $backg
+        separator          $highl
 
 #                          BORDER       BACKGROUND  TEXT
-        focused_workspace  #16a085		#16a085     #232c31
-        inactive_workspace #16a085		#232c31		#eeeeee
-        active_workspace   #888888		#888888		#232c31
-        urgent_workspace   #16a085		#16a085		#232c31
-        binding_mode       #16a085		#16a085		#232c31
+        focused_workspace  $highl		$highl		$backg
+        inactive_workspace $backg		$backg		$textw
+        active_workspace   $activ		$activ		$backg
+        urgent_workspace   $urgen		$urgen		$backg
+        binding_mode       $highl		$highl		$backg
     }
 }
 
-# AUTOSTART
-exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id ~/.screenlayout/default.sh &
 exec --no-startup-id compton -b &
 exec --no-startup-id nm-applet &
 exec --no-startup-id dunst &
 exec --no-startup-id xrdb ~/.Xdefaults &
-#exec --no-startup-id /usr/bin/synergys -f --no-tray --debug INFO --name Optiplex-3020 --enable-crypto -c /tmp/Synergy.J11411 --address :24800 -c /home/josh/.synergy/synergy.conf &
 exec --no-startup-id /opt/teamviewer/tv_bin/TeamViewer &
 exec --no-startup-id xedgewarp -b &
 exec --no-startup-id xbindkeys -p &
 exec --no-startup-id /usr/bin/redshift-gtk &
 exec --no-startup-id /usr/bin/indicator-kdeconnect &
-exec --no-startup-id /home/josh/scripts/wallpaper.sh &
+exec --no-startup-id /usr/bin/pamac-tray &
 exec --no-startup-id /usr/bin/clipit &
-exec --no-startup-id /usr/bin/conky -c ~/.i3/conkyrc &
-exec --no-startup-id /usr/bin/conky -c ~/.i3/conkyrc2 &
-exec --no-startup-id dropbox &
-exec --no-startup-id /home/josh/git/Scripts/scripts/feh.sh &
+exec --no-startup-id for i in ~/.i3/conkyrc.new[1,2,3] ; do sleep 1 ; nohup /usr/bin/conky -c $i & ; done
+exec --no-startup-id /usr/bin/dropbox &
+exec --no-startup-id /usr/bin/caffeine &
+exec --no-startup-id sh /home/josh/.fehbg &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+exec --no-startup-id sshfs -o allow_other 172.20.0.58: ~/VM &
 
+mode "Logout" {
+		bindsym L exec i3exit logout
+		bindsym H exec i3exit hibernate
+		bindsym R exec i3exit reboot
+		bindsym S exec i3exit shutdown
+        bindsym Escape mode "default"
+}
+
+bindsym $win+e exec --no-startup-id notify-send -u critical 'Session exit menu:' 'L to logout \nH to hibernate \nR ro reboot \nS to shutdown \nEsc to exit this mode' -i "/home/josh/.icons/oomox-232c31-flat/apps/scalable/xfce4-session.svg" ; mode "Logout"

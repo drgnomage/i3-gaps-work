@@ -1,7 +1,9 @@
 [global]
-    font = Ubuntu 10
+    font = Ubuntu, fontawesome 12
     plain_text = no
-    markup = yes
+    markup = full
+	sort = yes
+	stack_duplicates = false
     format = "<b>%s</b>\n%b"
     sort = yes
     indicate_hidden = yes
@@ -10,7 +12,7 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "400x5-6+6"
+    geometry = "450x5-42+42"
     shrink = no
     idle_threshold = 120
     monitor = 0
@@ -20,30 +22,43 @@
     show_indicators = no
     line_height = 5
     separator_height = 3
-    padding = 10
-    horizontal_padding = 10
-    separator_color = "#16a085"
+    padding = 5
+    horizontal_padding = 5
+    separator_color = "#0EE9F7"
     startup_notification = true
-    browser = /usr/bin/firefox
+    browser = /usr/bin/firefox -new-tab
+	always_run_script = true
+	per_monitor_dpi = true
     icon_position = left
-    icon_folders = /home/josh/.icons/oomox-232c31-flat/status/scalable:/home/josh/.icons/oomox-232c31-flat/devices/scalable
+	show_icons = left
+    icon_folders = /home/josh/.icons/custom/scalable/:/home/josh/.icons/oomox-232c31-flat/actions/scalable:/home/josh/.icons/oomox-232c31-flat/animations/scalable:/home/josh/.icons/oomox-232c31-flat/apps/scalable:/home/josh/.icons/oomox-232c31-flat/catergories/scalable:/home/josh/.icons/oomox-232c31-flat/devices/scalable:/home/josh/.icons/oomox-232c31-flat/emblems/scalable:/home/josh/.icons/oomox-232c31-flat/mimetypes/scalable:/home/josh/.icons/oomox-232c31-flat/places/scalable:/home/josh/.icons/oomox-232c31-flat/status/scalable:/home/josh/.icons/oomox-232c31-flat/stock/scalable
 	max_icon_size = 48
 
 [frame]
-    color = "#16a085"
-    width = 3
+    color = "#0EE9F7"
+    width = 2
 
 [urgency_low]
     background = "#232c31"
-    foreground = "#eeeeee"
+    foreground = "#686E7A"
     timeout = 5
 
 [urgency_normal]
     background = "#232c31"
-    foreground = "#eeeeee"
-    timeout = 5
+    foreground = "#EBEBEB"
+    timeout = 15
 
 [urgency_critical]
-    background = "#232c31"
-    foreground = "#eeeeee"
-    timeout = 5
+    background = "#FF214E"
+    foreground = "#232c31"
+    timeout = 60
+
+[kdeconnect]
+	appname = "KDE Connect"
+	new_icon = "phone-android"
+
+[test]
+	appname = Test
+	new_icon = "phone-android"
+	background = "#900000"
+

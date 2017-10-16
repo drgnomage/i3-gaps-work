@@ -13,13 +13,13 @@ minimum_size 220 20
 draw_shades no
 draw_outline no
 draw_borders yes
-border_width 3
-default_color 16a085
+border_width 2
+default_color 0EE9F7
 default_shade_color 000000
 default_outline_color 000000
 alignment top_right
-gap_x 13
-gap_y 748
+gap_x 52
+gap_y 1047
 use_spacer left
 uppercase no
 background yes

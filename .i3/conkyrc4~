@@ -8,8 +8,8 @@ update_interval .35
 cpu_avg_samples 2
 net_avg_samples 2
 double_buffer yes
-maximum_width 1651
-minimum_size 1651 20
+maximum_width 1700
+minimum_size 1652 20
 draw_shades no
 draw_outline no
 draw_borders yes
@@ -37,4 +37,4 @@ color8 709080
 color9 16a085
 
 TEXT
-${font Roboto Mono:bold:size=8}${alignc}${color1}${execi 1 rhythmbox-client --print-playing-format="%aa"} ${color7}- ${color2}${execi 1 rhythmbox-client --print-playing-format="%at"} ${color7}- ${color3}${execi 1 rhythmbox-client --print-playing-format="%tt"} ${color7}- ${color4}${execi 1 rhythmbox-client --print-playing-format "%ag"} ${color7}- ${color5}${execi 1 rhythmbox-client --print-playing-format="%te"}${color7}/${color6}${execi 1 rhythmbox-client --print-playing-format="%td"} ${color7}- ${color8}${execi 1 rhythmbox-client --print-playing-format="%ay"}
+${font Roboto Mono:bold:size=11}${alignc}${color5}${execi 1 rhythmbox-client --print-playing-format="%aa"} ${color7}- ${color2}${execi 1 rhythmbox-client --print-playing-format="%at"} ${color7}- ${color3}${execi 1 rhythmbox-client --print-playing-format="%tt"} ${color7}- ${color4}${execi 1 rhythmbox-client --print-playing-format "%ag"} ${color7}- ${color5}${execi 1 rhythmbox-client --print-playing-format="%te"}${color7}/${color6}${execi 1 rhythmbox-client --print-playing-format="%td"} ${color7}- ${color3}${execi 1 rhythmbox-client --print-playing-format="%ay"}

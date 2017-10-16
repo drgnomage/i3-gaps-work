@@ -31,22 +31,28 @@
 *.color7:      #9ea7a6
 *.color15:     #b5d8f6
 
-URxvt*scrollBar:         false
-URxvt*scrollBar_right:   false
+*scrollBar:         false
+*scrollBar_right:   false
 
-URxvt*transparent:       false
+*transparent:       false
 
-URxvt*depth: 32
-URxvt.background: [90]#232c31
+*depth: 32
+*background: [95]#232c31
 
-URxvt.font: xft:Monospace:pixelsize=13
-URxvt.letterSpace: 0
+*font: xft:RobotoMono Nerd Font:pixelsize=15,FontAwesome:pixelsize=15
+*letterSpace: 0
 
 *antialias:  true
-*autohint:   true
+*autohint:   false
 
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
+*perl-ext-common: default,matcher
+*url-launcher: /usr/bin/firefox
 
-URxvt.matcher.button: 1
+*matcher.button: 1
 
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

@@ -1,0 +1,38 @@
+own_window yes 
+own_window_type override
+own_window_colour 232c31
+own_window_hints below,sticky,skip_taskbar,skip_pager
+out_to_console no
+use_xft yes
+update_interval .35
+cpu_avg_samples 2
+net_avg_samples 2
+double_buffer yes
+maximum_width 10000
+minimum_size 1815 12
+draw_shades no
+draw_outline no
+draw_borders yes
+border_width 2
+default_color 0EE9F7
+default_shade_color 000000
+default_outline_color 000000
+alignment top_right
+gap_x 52
+gap_y 13
+use_spacer left
+uppercase no
+background yes
+draw_graph_borders no
+text_buffer_size 2048
+color0 686E7A
+color1 D81765
+color2 7AEF14
+color3 FCFF00
+color4 0EE9F7
+color5 FF2491
+color6 0FDCB6
+color7 EBEBEB
+
+TEXT
+${font Roboto Mono:bold:size=10}${color6}${goto 15}${time %A}   ${color2}${time %B %d %Y}   ${color7}${time %H}:${color6}${time %M}:${color2}${time %S} ${goto 370}${color7}Securus: ${execi 10 /home/josh/work_scripts/totp securus} ${goto 570}RX: ${color2}${downspeed enp2s0} ${goto 675}${color7}TX: ${color3}${upspeed enp2s0} ${goto 880}${color7}CPU0 ${color2}${cpubar cpu1 10,45}${color7} CPU1 ${color3}${cpubar cpu2 10,45}${color7} CPU2 ${color4}${cpubar cpu3 10,45}${color7} CPU3 ${color5}${cpubar cpu4 10,45}${color7} RAM ${color4}${membar 10,45}${color7} SWAP ${color5}${swapbar 10,45}${color7} HOME ${color2}${fs_bar 10,45 /home}${color7} ROOT ${color3}${fs_bar 10,45 /}${color7} VM ${color4}${fs_bar 10,45 /home/josh/VM}${color7} DATA ${color5}${fs_bar 10,45 /mnt/Data}

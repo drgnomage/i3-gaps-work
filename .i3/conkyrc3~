@@ -9,7 +9,7 @@ cpu_avg_samples 2
 net_avg_samples 2
 double_buffer yes
 maximum_width 220
-minimum_size 220 320
+minimum_size 220 20
 draw_shades no
 draw_outline no
 draw_borders yes
@@ -37,12 +37,4 @@ color8 709080
 color9 16a085
 
 TEXT
-${font Roboto Mono:bold:size=9}${goto 15}${execpi 50 /home/josh/ping.sh 50} ${execpi 51 /home/josh/ping.sh 51} ${execpi 52 /home/josh/ping.sh 52} ${execpi 53 /home/josh/ping.sh 53} ${execpi 54 /home/josh/ping.sh 54} ${execpi 55 /home/josh/ping.sh 55} ${execpi 56 /home/josh/ping.sh 56} ${execpi 57 /home/josh/ping.sh 57} ${execpi 58 /home/josh/ping.sh 58} ${execpi 59 /home/josh/ping.sh 59}
-${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${font Roboto Mono:bold:size=8}${alignc}${execi 3 rhythmbox-client --print-playing-format="%aa"}
-${font Roboto Mono:bold:size=8}${alignc}-
-${font Roboto Mono:bold:size=8}${alignc}${execi 3 rhythmbox-client --print-playing-format="%tt"}
-${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${font Roboto Mono:bold:size=8}${alignc}${execi 1 rhythmbox-client --print-playing-format="%te"}/${execi 1 rhythmbox-client --print-playing-format="%td"}
-${font Roboto Mono:size=12}${color9}${hr 1}${color7}
-${image /home/josh/Pictures/overlays/Rick.png  -p  40,130 -s 144x216}
+${goto 20}${font Roboto Mono:bold:size=9}${execpi 50 /home/josh/ping.sh 50} ${execpi 51 /home/josh/ping.sh 51} ${execpi 52 /home/josh/ping.sh 52} ${execpi 53 /home/josh/ping.sh 53} ${execpi 54 /home/josh/ping.sh 54} ${execpi 55 /home/josh/ping.sh 55} ${execpi 56 /home/josh/ping.sh 56} ${execpi 57 /home/josh/ping.sh 57} ${execpi 58 /home/josh/ping.sh 58} ${execpi 59 /home/josh/ping.sh 59}
